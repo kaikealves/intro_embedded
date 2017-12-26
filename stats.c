@@ -40,7 +40,7 @@ void main() {
   int maximum, minimum, mean, median;  
   printf("\n%-10s", "Array: ");
   print_array(test, SIZE);
-//  print_statistics(test, SIZE);
+  print_statistics(test, SIZE);
   printf("\n%-10s", "Sorted: ");
   sort_array(test, SIZE);
   
@@ -63,14 +63,40 @@ void print_array(unsigned char array[], unsigned int length){
 void print_statistics(unsigned char array[], unsigned int length){ 
   
   unsigned char maximum, minimum, mean, median; 
-//  maximum = find_maximum(array, SIZE);
-//  minimum = find_minimum(array, SIZE);
-//  mean = find_mean(array, SIZE);
+  maximum = find_maximum(array, SIZE);  
+  minimum = find_minimum(array, SIZE);
+  mean = find_mean(array, SIZE);
 //  median = find_median(array, SIZE);
   
-//  printf("%10s: %c \n %10s: %c \n %10s: %c, %10s: %c", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean, "Median: ", median);
+//  printf("%-10s %d \n %-10s: %d \n %-10s: %d, %-10s: %d", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean, "Median: ", median);
+  printf("%-10s %d \n%-10s %d \n%-10s %d", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean);
  
 }
+
+unsigned char find_maximum(unsigned char array[], unsigned int length){  
+  unsigned char max = array[0];
+  for(int i = 0; i < length; i++){
+    if(array[i] > max) max = array[i];
+  }  
+  return max;
+}
+
+unsigned char find_minimum(unsigned char array[], unsigned int length){  
+  unsigned char min = array[0];
+  for(int i = 0; i < length; i++){
+    if(array[i] < min) min = array[i];
+  }  
+  return min;
+}
+
+unsigned char find_mean(unsigned char array[], unsigned int length){
+  unsigned int sum = 0;
+  for(int i = 0; i < length; i++){
+    sum = sum +  array[i];
+  }  
+  return (sum/length);
+}
+
 
 void sort_array(unsigned char array[], unsigned int length){
   char  hold = 0;
