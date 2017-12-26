@@ -38,15 +38,49 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
   int maximum, minimum, mean, median;  
- 
-  print_statistics(test, SIZE);
+
   print_array(test, SIZE);
-  maximum = find_maximum(test, SIZE);
-  minimum = find_minimum(test, SIZE);
-  mean = find_mean(test, SIZE);
-  median = find_median(test, SIZE);
-  sort_array(test, SIZE);
+//  print_statistics(test, SIZE);
+//  sort_array(test, SIZE);
   
 }
 
 /* Add other Implementation File Code Here */
+void print_array(unsigned char array[], unsigned int length){
+  
+  printf("%10s", "Array: ");
+  printf("\n");  
+  for(int i = 0; int < length; i++){
+    printf("%c, ", array[i])/  
+
+  }
+  printf("\n"); 
+}
+
+void print_statistics(unsigned char array[], unsigned int length){ 
+  
+  unsigned char maximum, minimum, mean, median; 
+  maximum = find_maximum(test, SIZE);
+  minimum = find_minimum(test, SIZE);
+  mean = find_mean(test, SIZE);
+  median = find_median(test, SIZE);
+  
+  printf("%10s: %c \n %10s: %c \n %10s: %c, %10s: %c", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean, "Median: ", median);
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
