@@ -9,10 +9,10 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief First peer-graded assignment from Colorado Boulder`s Introduction to Embedded Systems at Coursera.com
  *
- * <Add Extended Description Here>
+ * This software analyses an array and print its statistics to the screen. 
  *
  * @author <Kaike Alves Silva>
  * @date <26 dec 2017>
