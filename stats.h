@@ -8,33 +8,92 @@
  * misuse of this material. 
  *
  *****************************************************************************/
+
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.h> 
+ * @brief <Week 1 Peer-graded assignment>
  *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Kaike Silva>
+ * @date <26 dec 2017>
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief prints the statistics of an array including minimum, maximum, mean and median.
  *
- * <Add Extended Description Here>
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param array The array to be analysed and to have its statistics printed
+ * @param length Number of elements in the array
  *
- * @return <Add Return Informaiton here>
  */
+void print_statistics(unsigned char array[], unsigned int length);
 
 
+/**
+ * @brief Given an array of data and a length, prints the array to the screen   
+ *
+ * @param array The array to be printed
+ * @param length Number of elements in the array
+ *
+ */
+void print_array(unsigned char array[], unsigned int length);
+
+
+/**
+ * @brief Given an array of data and a length, returns the median value
+ *
+ * @param length Number of elements in the array 
+ * @param array The array to be analysed
+ *
+ * @return Returns the median value of the array
+ */
+unsigned char find_median(unsigned char array[], unsigned int length);
+
+
+/**
+ * @brief Given an array of data and a length, returns the mean value
+ *
+ * @param length Number of elements in the array 
+ * @param array The array to be analysed
+ *
+ * @return Returns the mean value of the array
+ */
+unsigned char find_mean(unsigned char array[], unsigned int length);
+
+
+/**
+ * @brief Given an array of data and a length, returns the minimum value
+ *
+ * @param length Number of elements in the array 
+ * @param array The array to be analysed
+ *
+ * @return Returns the minimum value of the array
+ */
+unsigned char find_minimum(unsigned char array[], unsigned int length);
+
+
+/**
+ * @brief Given an array of data and a length, returns the maximum value
+ *
+ * @param length Number of elements in the array 
+ * @param array The array to be analysed
+ *
+ * @return Returns the maximum value of the array
+ */
+unsigned char find_maximum(unsigned char array[], unsigned int length);
+
+
+/**
+ * @brief Given an array of data and a length, sorts the array from largest to smallest
+ *
+ * @param array The array to be sorted
+ * @param length The length of the array to be sorted
+ *
+ */
+void sort_array(unsigned char array[], unsigned int length);
+
+ 
 #endif /* __STATS_H__ */

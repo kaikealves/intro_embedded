@@ -37,7 +37,16 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-
+  int maximum, minimum, mean, median;  
+ 
+  print_statistics(test, SIZE);
+  print_array(test, SIZE);
+  maximum = find_maximum(test, SIZE);
+  minimum = find_minimum(test, SIZE);
+  mean = find_mean(test, SIZE);
+  median = find_median(test, SIZE);
+  sort_array(test, SIZE);
+  
 }
 
 /* Add other Implementation File Code Here */
