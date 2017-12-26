@@ -38,20 +38,23 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
   int maximum, minimum, mean, median;  
-
+  printf("\n%-10s", "Array: ");
   print_array(test, SIZE);
 //  print_statistics(test, SIZE);
-//  sort_array(test, SIZE);
+  printf("\n%-10s", "Sorted: ");
+  sort_array(test, SIZE);
   
 }
 
 /* Add other Implementation File Code Here */
 void print_array(unsigned char array[], unsigned int length){
   
-  printf("%10s", "Array: ");
-  printf("\n");  
-  for(int i = 0; int < length; i++){
-    printf("%c, ", array[i])/  
+//  printf("\n");  
+//  printf("%-10s", "Array: ");
+ 
+  for(int i = 0; i < length; i++){
+    if( (i) % 10 == 0 && i != 0) printf("\n%-10s", "");
+    printf("%3d ", array[i]);  
 
   }
   printf("\n"); 
@@ -60,16 +63,30 @@ void print_array(unsigned char array[], unsigned int length){
 void print_statistics(unsigned char array[], unsigned int length){ 
   
   unsigned char maximum, minimum, mean, median; 
-  maximum = find_maximum(test, SIZE);
-  minimum = find_minimum(test, SIZE);
-  mean = find_mean(test, SIZE);
-  median = find_median(test, SIZE);
+//  maximum = find_maximum(array, SIZE);
+//  minimum = find_minimum(array, SIZE);
+//  mean = find_mean(array, SIZE);
+//  median = find_median(array, SIZE);
   
-  printf("%10s: %c \n %10s: %c \n %10s: %c, %10s: %c", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean, "Median: ", median);
+//  printf("%10s: %c \n %10s: %c \n %10s: %c, %10s: %c", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean, "Median: ", median);
  
 }
 
+void sort_array(unsigned char array[], unsigned int length){
+  char  hold = 0;
 
+  for(int i = 0; i < length - 1; i++){
+    for(int j = 0; j < length -  i; j++){
+      if(array[j] <= array[j+1]){
+        hold = array[j];
+        array[j] = array[j+1];
+        array[j+1] = hold;
+      }
+    }  
+  }
+//  printf("%-10s", "Sorted: \n");
+  print_array(array, length);
+}
 
 
 
