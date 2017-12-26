@@ -86,11 +86,14 @@ unsigned char find_minimum(unsigned char array[], unsigned int length){
 }
 
 unsigned char find_mean(unsigned char array[], unsigned int length){
-  unsigned int sum = 0;
+  int sum = 0;
+  float mean;
   for(int i = 0; i < length; i++){
     sum = sum +  array[i];
   }  
-  return (sum/length);
+  mean = (float)sum/length;
+  if((mean - (int)mean) < 0.5) return (char)mean;
+  else return (char)(mean+1);
 }
 
 unsigned char find_median(unsigned char array[], unsigned int length){
