@@ -40,24 +40,22 @@ void main() {
   int maximum, minimum, mean, median;  
   printf("\n%-10s", "Array: ");
   print_array(test, SIZE);
+  printf("\n\n");
   print_statistics(test, SIZE);
-  printf("\n%-10s", "Sorted: ");
+  printf("\n\n%-10s", "Sorted: ");
   sort_array(test, SIZE);
-  
+  print_array(test, SIZE);
+  printf("\n\n");
 }
 
 /* Add other Implementation File Code Here */
 void print_array(unsigned char array[], unsigned int length){
   
-//  printf("\n");  
-//  printf("%-10s", "Array: ");
- 
   for(int i = 0; i < length; i++){
     if( (i) % 10 == 0 && i != 0) printf("\n%-10s", "");
     printf("%3d ", array[i]);  
 
   }
-  printf("\n"); 
 }
 
 void print_statistics(unsigned char array[], unsigned int length){ 
@@ -66,11 +64,9 @@ void print_statistics(unsigned char array[], unsigned int length){
   maximum = find_maximum(array, SIZE);  
   minimum = find_minimum(array, SIZE);
   mean = find_mean(array, SIZE);
-//  median = find_median(array, SIZE);
+  median = find_median(array, SIZE);
   
-//  printf("%-10s %d \n %-10s: %d \n %-10s: %d, %-10s: %d", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean, "Median: ", median);
-  printf("%-10s %d \n%-10s %d \n%-10s %d", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean);
- 
+  printf("%-10s%3d \n\n%-10s%3d \n\n%-10s%3d \n\n%-10s%3d", "Minimum: ", minimum, "Maximum: ", maximum, "Mean: ", mean, "Median: ", median); 
 }
 
 unsigned char find_maximum(unsigned char array[], unsigned int length){  
@@ -97,6 +93,28 @@ unsigned char find_mean(unsigned char array[], unsigned int length){
   return (sum/length);
 }
 
+unsigned char find_median(unsigned char array[], unsigned int length){
+  unsigned char hold = 0;
+  unsigned char copy[length];
+  int median; 
+ 
+  for(int i = 0; i < length; i++) copy[i] = array[i];
+
+  for(int i = 0; i < length - 1; i++){
+    for(int j = 0; j < length -  i; j++){
+      if(copy[j] <= copy[j+1]){
+        hold = copy[j];
+        copy[j] = copy[j+1];
+        copy[j+1] = hold;
+      }
+    }  
+  }
+
+  if(length%2 == 0) return ( copy[length/2 + 1] + copy[length/2] ) / 2;
+  else return copy[length/2];
+
+}
+
 
 void sort_array(unsigned char array[], unsigned int length){
   char  hold = 0;
@@ -110,8 +128,8 @@ void sort_array(unsigned char array[], unsigned int length){
       }
     }  
   }
-//  printf("%-10s", "Sorted: \n");
-  print_array(array, length);
+
+
 }
 
 
